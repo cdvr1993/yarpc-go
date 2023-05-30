@@ -53,3 +53,5 @@ require (
 	gopkg.in/yaml.v2 v2.2.8
 	honnef.co/go/tools v0.3.2
 )
+
+replace go.uber.org/net/metrics => github.com/cdvr1993/yarpcmetrics loggingv1.0.0
