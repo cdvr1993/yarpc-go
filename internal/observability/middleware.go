@@ -22,6 +22,7 @@ package observability
 
 import (
 	"context"
+	"fmt"
 	"sync"
 
 	"go.uber.org/net/metrics"
@@ -181,6 +182,8 @@ func applyLogLevelsConfig(dst *levels, src *DirectionalLevelsConfig) {
 
 // Handle implements middleware.UnaryInbound.
 func (m *Middleware) Handle(ctx context.Context, req *transport.Request, w transport.ResponseWriter, h transport.UnaryHandler) error {
+	fmt.Println("hello world!")
+
 	call := m.graph.begin(ctx, transport.Unary, _directionInbound, req)
 	defer m.handlePanicForCall(call, transport.Unary)
 
